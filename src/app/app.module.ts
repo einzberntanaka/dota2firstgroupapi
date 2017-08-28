@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { MainRoutingModule } from './app.routing';
 import { HomeModule } from './component/home/home.modules';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 
@@ -13,8 +16,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     MainRoutingModule,
-    HomeModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,9 +21,11 @@ export class HomeComponent implements OnInit {
                     account_id: item.account_id,
                     match_id: item.match_id,
                     hero_id: item.hero_id,
+                    hero_name: this.Dota2Service.getHeroNameById(item.hero_id),
                     leaguename: item.leaguename,
                     win: item.win,
-                    start_time: item.start_time
+                    start_time: item.start_time,
+                    hero_img: this.Dota2Service.getHeroImageById(item.hero_id)
                 }
             }).forEach(item => this.matchList.push(item));
         })
