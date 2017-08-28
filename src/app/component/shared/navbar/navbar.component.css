@@ -1,0 +1,29 @@
+.navbar {
+    background: #20272a;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    border: none;
+}
+.navbar li a{
+    color: #fff;
+}
+.navbar li a:hover {
+    color: #ccc;
+}
+.nav li.active a {
+    color: #000;
+}
+.navbar .navbar-brand span{
+    display: inline;
+    position: relative;
+    top: -15px;
+    color: #fff;
+}
+.navbar .dropdown-menu{
+    background: #20272a;
+}
+.main-logo {
+    top: -15px;
+    position: relative;
+    display: inline;
+    width: 50px;
+}

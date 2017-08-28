@@ -1,0 +1,22 @@
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Match ID</th>
+        <th>Account ID</th>
+        <th>Hero ID</th>
+        <th>League Name</th>
+        <th>Start Time</th>
+        <th>Win</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of matchListModel">
+        <td>{{ item.match_id }}</td>
+        <td>{{ item.account_id }}</td>
+        <td>{{ item.hero_id }}</td>
+        <td>{{ item.leaguename }}</td>
+        <td>{{ item.start_time }}</td>
+        <td>{{ item.win }}</td>
+      </tr>
+    </tbody>
+  </table>

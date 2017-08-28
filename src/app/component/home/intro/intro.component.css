@@ -1,0 +1,58 @@
+.home-intro {
+    background-image: url("~/assets/images/intro-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 600px;
+    margin: 0;
+    text-align: center;
+    padding-top: 10%;
+}
+.home-intro-control {
+    padding-top: 70px;
+    background: rgba(0, 0, 0,0.6);
+    height: 240px;
+}
+.home-intro-control span.intro-brand {
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    line-height: 40px;
+}
+.home-intro-control span.intro-description {
+    display: block;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.home-intro-control a.intro-button {
+    border: 1px solid;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+.home-intro-control a.intro-button:hover{
+    border: 1px solid;
+    color: #42c2f4;
+    padding: 10px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+}
+.intro-item {
+    margin-top: 60px;
+    text-align: center;
+    border-right: 1px solid #ccc ;
+}
+.intro-item:last-child{
+    border-right: 0;
+}
+.intro-item i{
+    color: #20272a;
+    font-size: 40px;
+}
+.intro-item span{
+    margin-top: 10px;
+    font-size: 13px;
+    display: block;
+}
