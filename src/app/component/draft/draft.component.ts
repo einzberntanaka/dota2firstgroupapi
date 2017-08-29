@@ -10,9 +10,11 @@ import { DraftService } from '../../shared/services/draft.service';
 export class DraftComponent {
     
     listInitHeroes:  any[] = [];
+
     availableHeroes: any[] = [];
     selectedHeroes: any[] = [];
     draggedHeroes: any;
+    
     constructor (private Dota2Service: Dota2Service, private DraftService: DraftService){
         this.listInitHeroes = Dota2Service.heroInfoList;
         this.availableHeroes = Dota2Service.heroInfoList;

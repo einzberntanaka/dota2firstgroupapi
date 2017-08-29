@@ -15,7 +15,19 @@
                         </div>
                     </div>    
 
+
+
+
                     
+
+                     <div class="ui-grid-col-6 ui-widget-content" pDroppable="heroes" (onDrop)="drop($event)" [ngClass]="{'ui-state-highlight':draggedHeroes}" >
+                        <div class="heroes-list">
+                            <div *ngFor="let hero of selectedHeroes" class="hero-item">
+                                  <img src="{{hero.hero_img}}" style="float:left" draggable="false">
+                                  <span>{{hero.hero_name}}</span>
+                            </div>
+                        </div>
+                    </div>    
                     <!--<div class="ui-grid-col-6 ui-widget-content" style="border-right:0 none">
                         <ul style="margin:0;padding:0">
                             <li *ngFor="let hero of availableHeroes" class="ui-state-default ui-helper-clearfix" pDraggable="heroes"
@@ -26,12 +38,6 @@
                             </li>
                         </ul>
                     </div>-->
-                    <div class="ui-grid-col-6 ui-widget-content" pDroppable="heroes" (onDrop)="drop($event)"
-                            [ngClass]="{'ui-state-highlight':draggedHeroes}">
-                        <p-dataTable [value]="selectedHeroes" dropgable="true">
-                            <p-column field="hero_name" header="Name"></p-column>
-                        </p-dataTable>
-                    </div>
                 </div>
             </div>
         </div>

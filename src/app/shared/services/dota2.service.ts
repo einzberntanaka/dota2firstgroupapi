@@ -10,10 +10,17 @@ export class Dota2Service {
     private baseUrl: string;
     private topMatchesQuery: string;
     private listHeroesQuery: string;
+
+    public heroesTypeList: any[] = [];
+
     public heroInfoList: any[] = [];
+    public strengthHeroes: any[] = [];
+    public agilityHeroes: any[] = [];
+    public intelligenceHeroes: any[] = [];
+
     //todos$: FirebaseListObservable<any[]>;
 
-    constructor(private http: Http/*, private af: AngularFireDatabase*/) {
+    constructor(private http: Http, private db: AngularFireDatabase) {
         this.baseUrl = 'https://api.opendota.com/api/explorer?sql=';
         this.topMatchesQuery = `SELECT
                                 matches.match_id,
@@ -43,6 +50,11 @@ export class Dota2Service {
                 }
             }).forEach(item => this.heroInfoList.push(item));
         })
+
+        this.db.list('/HeroesClass').subscribe(data => {
+             console.log(data);
+        })
+
     }
     getTopMatches(){
         return this.http.get(this.baseUrl+this.topMatchesQuery)
@@ -51,6 +63,16 @@ export class Dota2Service {
     private getHeroes(): Observable<any> {
         return this.http.get(this.baseUrl+this.listHeroesQuery)
             .map((res:Response) => res.json())
+    }
+
+    getStrengthHeroes(){
+        let listHeroes: any [] = [];
+        this.heroInfoList.forEach( item => {
+            if(this.heroesTypeList[0].strength.findIndex(item.hero_id) !== -1){
+                listHeroes.push(item);
+            }
+        });
+        return listHeroes;
     }
     /*getHeroes(): Observable<any> {
          return this.http.get("/assets/data/heroes.json")
