@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MainRoutingModule } from './app.routing';
-import { HomeModule } from './component/home/home.modules';
+import { HomeModule } from './component/home/home.module';
+import { DraftModule } from './component/draft/draft.module';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { environment } from '../environments/environment';
 
@@ -18,7 +20,9 @@ import { AppComponent } from './app.component';
     MainRoutingModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
-    HomeModule
+    AngularFireDatabaseModule,
+    HomeModule,
+    DraftModule
   ],
   providers: [],
   bootstrap: [AppComponent]

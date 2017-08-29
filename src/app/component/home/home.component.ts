@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Dota2Service } from '../../shared/services/dota2.service';
+import { DraftService } from '../../shared/services/draft.service';
 
 @Component({
     templateUrl: 'home.component.html',
@@ -8,11 +9,13 @@ import { Dota2Service } from '../../shared/services/dota2.service';
 
 export class HomeComponent implements OnInit {
     matchList: any[] = [];
-    constructor(private Dota2Service: Dota2Service){
-
+    draftList: any[] = [];
+    constructor(private Dota2Service: Dota2Service, private DraftService: DraftService){
     }
     ngOnInit() {
         this.getTopMatches();
+
+        console.log(this.DraftService.draftList);
     }
     getTopMatches(){
         this.Dota2Service.getTopMatches().subscribe(data => {

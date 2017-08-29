@@ -1,0 +1,27 @@
+.hero-item span{
+    position: absolute;
+    font-size: 9px;
+    display: block;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    width: 65px;
+    height: 11px;
+    text-align: center;
+    margin-top: 25px;
+    overflow: hidden;
+}
+.hero-item img{
+    width: 65px;
+}
+.hero-item {
+    margin: 1px;
+    width: 65px;
+    float: left;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+}
+.hero-item:hover span{
+    color:#ccc;
+}
+.hero-item:hover {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.8);
+}

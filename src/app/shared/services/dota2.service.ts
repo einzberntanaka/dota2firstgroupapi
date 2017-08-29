@@ -48,7 +48,7 @@ export class Dota2Service {
         return this.http.get(this.baseUrl+this.topMatchesQuery)
             .map((res:Response) => res.json());
     }
-    getHeroes(): Observable<any> {
+    private getHeroes(): Observable<any> {
         return this.http.get(this.baseUrl+this.listHeroesQuery)
             .map((res:Response) => res.json())
     }

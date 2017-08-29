@@ -6,12 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyB4nqcCRl4h8qmp5rWMdAjM5yV0jYI2mTU",
-    authDomain: "dota2api-e3cfa.firebaseapp.com",
-    databaseURL: "https://dota2api-e3cfa.firebaseio.com",
-    projectId: "dota2api-e3cfa",
-    storageBucket: "",
-    messagingSenderId: "449906773229"
-
+    apiKey: "AIzaSyCm4Gzc_cekuhixPRAvpRydTndeMnunDJQ",
+    authDomain: "dota2api-6ff83.firebaseapp.com",
+    databaseURL: "https://dota2api-6ff83.firebaseio.com",
+    projectId: "dota2api-6ff83",
+    storageBucket: "dota2api-6ff83.appspot.com",
+    messagingSenderId: "342274192231"
   }
 };
