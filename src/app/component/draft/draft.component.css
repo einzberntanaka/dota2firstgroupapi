@@ -40,13 +40,13 @@
     margin: 0 auto;
     background: none;
     border: none;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 .pick-section {
-    padding-top: 20px;
     text-align: center;
-    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 .heroes-slot{
     background: rgba(0, 0, 0, 0.9);
@@ -54,7 +54,55 @@
     height: 54px;
     display: inline-block;
     margin-left: 20px;
+    background-size: 100px 54px;
 }
 .heroes-highlight {
     border: 3px solid #fff;
+}
+.heroes-highlight {
+    background-size: 96px 48px;
+}
+.heroes-slot span{
+    position: absolute;
+    font-size: 10px;
+    display: block;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    margin-top: 34px;
+    padding-top:4px;
+    overflow: hidden;
+}
+.heroes-highlight span{
+    width: 94px;
+    margin-top: 28px;
+    height: 20px;
+}
+.heroes-slot .heroes-holder{
+    width: 100px;
+    height: 54px;
+    position: absolute;
+    background: none;
+    z-index: 9998;
+}
+.heroes-slot .fa {
+    font-size: 12px;
+    position: absolute;
+    margin: 2px 0px 0px 36px;
+    cursor: pointer;
+    z-index: 9999;
+    color: rgb(102, 0, 0);
+    box-shadow: 0px 0px 2px #888;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1px;
+}
+.heroes-slot .fa:hover{
+    color:red;
+}
+.heroes-type-label{
+    margin-bottom:15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
 }

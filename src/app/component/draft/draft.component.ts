@@ -27,17 +27,19 @@ export class DraftComponent implements OnInit{
     constructor (private Dota2Service: Dota2Service, private DraftService: DraftService){}
 
     ngOnInit(){
-        Promise.all([this.InitializeHeroList(), this.InitializeHeroTypeList()]).then(values => { 
+        Promise.all([this.InitializeHeroList(), this.InitializeHeroTypeList()]).then(values => {
             this.availableHeroes.forEach(item => {
-                console.log(item);
                 if(this.listInitHeroType[0].includes(item.hero_id)){
-                    this.availableStrHeroes.push(item);
-                }
-                if(this.listInitHeroType[1].includes(item.hero_id)){
+                    item.hero_type="agi";
                     this.availableAgiHeroes.push(item);
                 }
-                if(this.listInitHeroType[2].includes(item.hero_id)){
+                if(this.listInitHeroType[1].includes(item.hero_id)){
+                    item.hero_type="int";
                     this.availableIntHeroes.push(item);
+                }
+                if(this.listInitHeroType[2].includes(item.hero_id)){
+                    item.hero_type="str";
+                    this.availableStrHeroes.push(item);
                 }
             })
         }).catch(reason => { 
@@ -51,7 +53,8 @@ export class DraftComponent implements OnInit{
                     return {
                         hero_id: item.id,
                         hero_name: item.localized_name,
-                        hero_img: 'http://cdn.dota2.com/apps/dota2/images/heroes/'+item.name.replace('npc_dota_hero_','')+'_sb.png'
+                        hero_img: 'http://cdn.dota2.com/apps/dota2/images/heroes/'+item.name.replace('npc_dota_hero_','')+'_sb.png',
+                        hero_large_img: 'http://cdn.dota2.com/apps/dota2/images/heroes/'+item.name.replace('npc_dota_hero_','')+'_hphover.png'
                     }
                 }).forEach(item => this.availableHeroes.push(item));
             })
@@ -63,29 +66,46 @@ export class DraftComponent implements OnInit{
             })
             .catch(err => {});
     }
-
-
-
-
-    testDrag(){
-        console.log('drag');
-    }
     dragStart(event, hero: any) {
-        console.log('drag start');
         this.draggedHeroes = hero;
     }
-
     dragEnd(event) {
-        console.log('drag end');
         this.draggedHeroes = null;
     }
     drop(event) {
-        console.log('drag drop');
         if(this.draggedHeroes) {
-            let draggedHeroesIndex = this.findIndex(this.draggedHeroes);
-            this.selectedHeroes = [...this.selectedHeroes, this.draggedHeroes];
-            this.availableHeroes = this.availableHeroes.filter((val,i) => i!=draggedHeroesIndex);
+            if(this.pickingHeroesList[event.target.id]!=''){
+                this.returnHeroToPool(this.pickingHeroesList[event.target.id]);
+            }
+            this.pickingHeroesList[event.target.id] = this.draggedHeroes;
+            this.availableStrHeroes = this.availableStrHeroes.filter(item => item != this.draggedHeroes);
+            this.availableAgiHeroes = this.availableAgiHeroes.filter(item => item != this.draggedHeroes);
+            this.availableIntHeroes = this.availableIntHeroes.filter(item => item != this.draggedHeroes);
             this.draggedHeroes = null;
+        }
+    }
+    removeHeroFromPickingList(event, hero: any){
+        let index = event.target.parentElement.id;
+        this.pickingHeroesList[index] = '';
+        if(hero.hero_type === 'str'){
+            this.availableStrHeroes.push(hero);
+        }
+        if(hero.hero_type === 'agi'){
+            this.availableAgiHeroes.push(hero);
+        }
+        if(hero.hero_type === 'int'){
+            this.availableIntHeroes.push(hero);
+        }
+    }
+    returnHeroToPool(hero){
+        if(hero.hero_type === 'str'){
+            this.availableStrHeroes.push(hero);
+        }
+        if(hero.hero_type === 'agi'){
+            this.availableAgiHeroes.push(hero);
+        }
+        if(hero.hero_type === 'int'){
+            this.availableIntHeroes.push(hero);
         }
     }
     findIndex(hero: any) {
