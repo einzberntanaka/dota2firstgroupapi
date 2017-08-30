@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/first';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 
 @Injectable()
 
@@ -11,9 +14,10 @@ export class Dota2Service {
     private topMatchesQuery: string;
     private listHeroesQuery: string;
 
-    public heroesTypeList: any[] = [];
+    private heroInfoList: any[] = [];
 
-    public heroInfoList: any[] = [];
+    public heroesType: any[] = [];
+
     public strengthHeroes: any[] = [];
     public agilityHeroes: any[] = [];
     public intelligenceHeroes: any[] = [];
@@ -22,6 +26,7 @@ export class Dota2Service {
 
     constructor(private http: Http, private db: AngularFireDatabase) {
         this.baseUrl = 'https://api.opendota.com/api/explorer?sql=';
+        this.listHeroesQuery = 'SELECT * FROM heroes';
         this.topMatchesQuery = `SELECT
                                 matches.match_id,
                                 matches.start_time,
@@ -39,7 +44,6 @@ export class Dota2Service {
                                 WHERE TRUE
                                 ORDER BY matches.match_id DESC NULLS LAST
                                 LIMIT 200`;
-       this.listHeroesQuery = 'SELECT * FROM heroes';
        
         this.getHeroes().subscribe(data => {
             data.rows.map(item => {
@@ -50,35 +54,12 @@ export class Dota2Service {
                 }
             }).forEach(item => this.heroInfoList.push(item));
         })
-
-        this.db.list('/HeroesClass').subscribe(data => {
-             console.log(data);
-        })
-
     }
     getTopMatches(){
         return this.http.get(this.baseUrl+this.topMatchesQuery)
             .map((res:Response) => res.json());
     }
-    private getHeroes(): Observable<any> {
-        return this.http.get(this.baseUrl+this.listHeroesQuery)
-            .map((res:Response) => res.json())
-    }
 
-    getStrengthHeroes(){
-        let listHeroes: any [] = [];
-        this.heroInfoList.forEach( item => {
-            if(this.heroesTypeList[0].strength.findIndex(item.hero_id) !== -1){
-                listHeroes.push(item);
-            }
-        });
-        return listHeroes;
-    }
-    /*getHeroes(): Observable<any> {
-         return this.http.get("/assets/data/heroes.json")
-                         .map((res:any) => res.json());
-
-    }*/
     getHeroImageById(id: string){
         if(this.heroInfoList.filter(x => x.hero_id == id)[0] !== 'undefined')
             return this.heroInfoList.filter(x => x.hero_id == id)[0].hero_img;
@@ -89,11 +70,19 @@ export class Dota2Service {
             return this.heroInfoList.filter(x => x.hero_id == id)[0].hero_name;
         return null;
     }
-    /*getListHeroes(){
-        return this.todos$ = this.af.list('/todos', {
-            query: {
-                limitToFirst: 200
-            }
-        });
-    }*/
+
+    setHeroesTypes(strHeroes: any[], agiHeroes: any[], intHeroes: any[]){
+        this.strengthHeroes = strHeroes;
+        this.agilityHeroes = agiHeroes;
+        this.intelligenceHeroes = intHeroes;
+    }
+
+    getHeroes(): Observable<any> {
+        return this.http.get(this.baseUrl+this.listHeroesQuery)
+            .map((res:Response) => res.json());
+    }
+    getListHeroesType(){
+        return this.db.list('/HeroType').first();
+    }
+
 }

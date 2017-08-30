@@ -5,7 +5,7 @@
     color: #fff;
     background: rgba(0,0,0,0.7);
     width: 65px;
-    height: 11px;
+    height: 12px;
     text-align: center;
     margin-top: 25px;
     overflow: hidden;
@@ -16,12 +16,45 @@
 .hero-item {
     margin: 1px;
     width: 65px;
-    float: left;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    float: left;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+.heroes-list{
+    margin-left: 16px;
 }
 .hero-item:hover span{
     color:#ccc;
 }
 .hero-item:hover {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.8);
+}
+.draft-section {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+}
+.draft-hero-type-section {
+    text-align: center;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pick-section {
+    padding-top: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+.heroes-slot{
+    background: rgba(0, 0, 0, 0.9);
+    width:100px;
+    height: 54px;
+    display: inline-block;
+    margin-left: 20px;
+}
+.heroes-highlight {
+    border: 3px solid #fff;
 }

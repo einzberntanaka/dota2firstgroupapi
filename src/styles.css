@@ -5,3 +5,8 @@
 .main-content {
     min-height: 500px;
 }
+.draft-wrapper {
+    background-image: url('~/assets/images/draft-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
