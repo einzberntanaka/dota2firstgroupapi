@@ -7,6 +7,14 @@
             </h4>
             <span class="page-title">Counter now!</span>
             <div class="ui-grid ui-grid-pad ui-grid-responsive">
+                <div class="ui-grid-row">
+                    <div class="textbox-control ui-g-12 ui-md-4">
+                        <div class="ui-inputgroup">
+                            <input type="text" pInputText placeholder="Search heroes" class="ui-g-12 ui-md-12" [(ngModel)]="searchingHeroesText" (keyup)="findHeroesByText()">   
+                            <button type="button" (click)="resetSearchingResult();" [hidden]="searchingHeroesText==''"><i class="fa fa-remove"></i></button>      
+                        </div>
+                    </div>
+                </div>
                 <div class="ui-grid-row draft-section">
                     <div class="ui-grid-col-4 ui-widget-content draft-hero-type-section">
                         <div class="heroes-type-label">
@@ -18,6 +26,7 @@
                                 (onDragEnd)="dragEnd($event)">
                                 <img src="{{hero.hero_img}}" style="float:left" draggable="false">
                                 <span>{{hero.hero_name}}</span>
+                                <div class="hero-list-icon-holder" *ngIf="!hero.isSearchingResult"></div>
                             </div>
                         </div>
                     </div>
@@ -31,6 +40,7 @@
                                 (onDragEnd)="dragEnd($event)">
                                 <img src="{{hero.hero_img}}" style="float:left" draggable="false">
                                 <span>{{hero.hero_name}}</span>
+                                <div class="hero-list-icon-holder" *ngIf="!hero.isSearchingResult"></div>
                             </div>
                         </div>
                     </div>
@@ -44,6 +54,7 @@
                                 (onDragEnd)="dragEnd($event)">
                                 <img src="{{hero.hero_img}}" style="float:left" draggable="false">
                                 <span>{{hero.hero_name}}</span>
+                                <div class="hero-list-icon-holder" *ngIf="!hero.isSearchingResult"></div>
                             </div>
                         </div>
                     </div>

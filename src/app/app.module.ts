@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { MainRoutingModule } from './app.routing';
 import { HomeModule } from './component/home/home.module';
 import { DraftModule } from './component/draft/draft.module';

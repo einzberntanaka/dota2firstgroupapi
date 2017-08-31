@@ -84,5 +84,8 @@ export class Dota2Service {
     getListHeroesType(){
         return this.db.list('/HeroType').first();
     }
+    getListHeroesDraft(){
+        return this.db.list('/HeroDraft').first();
+    }
 
 }
