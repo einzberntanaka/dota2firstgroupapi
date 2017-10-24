@@ -1,0 +1,230 @@
+<body>
+    <div class="container">
+            <nav class="navbar navbar-default" id="navbar-test">
+                <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+                    <li><a href="../navbar-static-top/">Static top</a></li>
+                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+        
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <div class="test page">
+                        <div id="mySidenav" class="candidate-quick-view sidenav">
+                            <ul class="quick-view-menu">
+                                <li>
+                                    <a href="#"><i class="sprite-icon sprite-arrow-left-big" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" (click)="hide()"><i class="sprite-icon sprite-remove-big" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                            <div class="candidate-quick-view-detail">
+
+                                <div class="candidate-card" >
+                                    <img class="img-circle" src="https://kenh14cdn.com/2016/choemgananh01-1466522171270.jpg"/>
+                                    <div class="candidate-card-block">
+                                        <span class="card-name">Anna Kominove Jun</span>
+                                        <div class="dropdown quickview-dropdown">
+                                                applied for
+                                                <a href="#" data-toggle="dropdown">Fullstack Developer<span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                  <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i><span>Fullstack Developer</span></a></li>
+                                                  <li><a href="#"><i></i><span>Back-end Developer</span></a></li>
+                                                  <li><a href="#"><i></i><span>Front-end Developer</span></a></li>
+                                                  <li class="dropdown-action-button first"><a href="#"><i class="fa fa-archive" aria-hidden="true"></i><span>Show archive</span></a></li>
+                                                  <li class="dropdown-action-button"><a href="#"><i class="sprite-icon sprite-s-suitcase-small" aria-hidden="true"></i><span>Add job application</span></a></li>
+                                                </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--<div class="stepwizard">
+                                        <div class="stepwizard-row">
+                                            <div class="stepwizard-step">
+                                                <p>New Applicant</p>
+                                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="stepwizard-step">
+                                                <p>New Lead</p>
+                                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="stepwizard-step">
+                                                <p>Phone Interview</p>
+                                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="stepwizard-step">
+                                                <p>On-Site Interview</p>
+                                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                            </div> 
+                                            <div class="stepwizard-step">
+                                                <p>Offer</p>
+                                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                            </div>  
+                                        </div>
+                                </div>-->
+
+                                <ul class="application-progressbar">
+                                    <li><span>New Applicant</span></li>
+                                    <li><span>New Lead</span></li>
+                                    <li><span>Phone Interview</span></li>
+                                    <li class="current-state"><span>On-Site Interview</span></li>
+                                    <li><span>Offer</span></li>
+                                </ul>
+                                <div class="candidate-info">
+                                    <ul class="primary-list">
+                                        <li><i class="sprite-icon sprite-envelope-small" aria-hidden="true"></i><span>Anna_komilivo_204879@gmail.com</span></li>
+                                        <li> <i class="sprite-icon sprite-telephone-small" aria-hidden="true"></i><span>0123456789</span></li>
+                                        <li><i class="sprite-icon sprite-map-marker-small" aria-hidden="true"></i><span>San Francisco</span></li>
+                                    </ul>
+                                    <ul class="primary-list">
+                                        <li><i class="sprite-icon sprite-attach-small" aria-hidden="true"></i><span>Anna_komilivo_CV.pdf</span></li>
+                                    </ul>
+                                    <a href="#" class="primary-link"><i class="fa fa-plus" aria-hidden="true"></i>Upload a file</a>
+                                    <ul class="primary-list">
+                                        <li><i class="sprite-icon sprite-suitcase-small" aria-hidden="true"></i><span>Vietnamwork</span></li>
+                                    </ul>
+                                    <ul class="primary-list tag">
+                                        <li>Full-time<a href="#"><i class="sprite-icon sprite-remove-bold-small" aria-hidden="true"></i></a></li>
+                                        <li>Design<a href="#"><i class="sprite-icon sprite-remove-bold-small" aria-hidden="true"></i></a></li>
+                                        <li>Software testing<a href="#"><i class="sprite-icon sprite-remove-bold-small" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                    <a href="#" class="primary-link"><i class="fa fa-plus" aria-hidden="true"></i>Add new tag</a>
+                                </div>
+
+
+
+
+                            </div>
+        
+
+
+                        </div>
+                        <span style="font-size:30px;cursor:pointer" (click)="show()">&#9776; open</span>
+
+
+
+                        <div class="test">
+                            <h2>BIG</h2>
+                            <i class="sprite-icon sprite-members-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-user-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-star-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-filter-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-summary-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-profile-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-mountain-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-red-telephone-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-position-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-money-big" aria-hidden="true"></i>
+                            <br/>
+                            <i class="sprite-icon sprite-remove-user-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-large-envelope-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-trash-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-faded-star-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-x-star-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-star-light-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-filled-star-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-remove-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-calendar-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-remove-user-gray-big" aria-hidden="true"></i>
+                            <br/>
+                            <i class="sprite-icon sprite-arrow-left-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-arrow-right-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-nav-arrow-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-envelope-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-telephone-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-map-marker-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-attach-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-suitcase-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-pen-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-fly-big" aria-hidden="true"></i>
+                            <br/>
+                            <i class="sprite-icon sprite-zoom-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-remove-bold-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-document-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-s-suitcase-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-education-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-n-document-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-user-light-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-conservation-big" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-circle-remove-big" aria-hidden="true"></i>
+
+                            <h2>SMALL</h2>
+                            <i class="sprite-icon sprite-members-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-user-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-star-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-filter-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-summary-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-profile-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-mountain-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-red-telephone-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-position-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-money-small" aria-hidden="true"></i>
+                            <br/>
+                            <i class="sprite-icon sprite-remove-user-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-large-envelope-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-trash-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-faded-star-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-x-star-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-star-light-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-filled-star-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-remove-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-calendar-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-remove-user-gray-small" aria-hidden="true"></i>
+                            <br/>
+                            <i class="sprite-icon sprite-arrow-left-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-arrow-right-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-nav-arrow-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-envelope-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-telephone-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-map-marker-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-attach-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-suitcase-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-pen-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-fly-small" aria-hidden="true"></i>
+                            <br/>
+                            <i class="sprite-icon sprite-zoom-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-remove-bold-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-document-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-s-suitcase-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-education-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-n-document-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-user-light-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-conservation-small" aria-hidden="true"></i>
+                            <i class="sprite-icon sprite-circle-remove-small" aria-hidden="true"></i>
+                        </div>
+                </div>
+            </div>
+    </div>
+</body>

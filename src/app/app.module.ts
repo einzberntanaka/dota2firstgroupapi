@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MainRoutingModule } from './app.routing';
 import { HomeModule } from './component/home/home.module';
 import { DraftModule } from './component/draft/draft.module';
+import { TestModule } from './component/test/test.module';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -22,7 +23,8 @@ import { AppComponent } from './app.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     HomeModule,
-    DraftModule
+    DraftModule,
+    TestModule
   ],
   providers: [],
   bootstrap: [AppComponent]
